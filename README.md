@@ -45,4 +45,4 @@ N estimators and colsample by tree : they control the speed of convergence of th
 
 
 RAMP detailled informations
-More informations about RAMP can be obtained on the page of the Airplanes project template here.
+More informations about RAMP can be obtained on the page of the bike_counting project template here.
