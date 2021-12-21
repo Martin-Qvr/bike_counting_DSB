@@ -14,14 +14,14 @@ The second stage of the problem was to find an appropriate Machine Learning mode
 
 Our best model  reached a RMSE of 0.748 on Ramp.
 
-# Data acquisition
+## Data acquisition
 The data acquired basically lied among non-temporal and temporal data. Along the way, we built several functions to increase our efficiency to preprocess data and automate the integration of data from new sources.
 
-# Model
+## Model
 Setting a performance criterion
 We had to define a criterion. The most common and interpretable one is actually the RMSE. Plus, it was simplified as the ramp-test command on the terminal provided a simple way to produce a quick performance analysis of our model. Nonetheless, we used several other methods to increase the performance of our model, especially to tune the hyperparameters of our models (see below).
 
-## Choosing a model: CatBoost
+### Choosing a model: CatBoost
 We have tried several machine learning models and compared them using the ramp-test command of the terminal (which is basically a cross-validation).
 
 - Decision trees : These algorithms did not perform well (compared to the following) on the train dataset, and terribly on the test dataset (problems of overfitting, structural in Decision Trees models).
@@ -31,13 +31,11 @@ We have tried several machine learning models and compared them using the ramp-t
 
 - CatBoost : This model is also a boosted random forest, however it handles the categorical features correctly . Our RMSE increased significantly when we switched to this model, and we managed to optimize it correctly.
 
-## Choosing the features
+### Choosing the features
 We mostly used the feature importance attribute returned by the CatBoost model in order to choose the right features : the most significant data was composed of the baseline frequentation for each flight, of the date of departure and of the 3 stock index variables. We tried to remove population departure and holiday, however as we lost in RMSE we figured out that those two variables were still significant.
 
-Here is an output showing the most significant features :
 
-
-Tuning the hyperparameters
+## Tuning the hyperparameters
 In order to test the hyperparameters, we decided to start with random parameters and to use a GridSearch to tune them. We evaluated the following parameters for the xgboost model. However, we also did it  for the Catboost modell. 
 
 Learning rate and max depth : they control the propensity of the model to overfit. The learning rate is a penalisation used to control the train/test error ratio, while the max depth can be used to stop a tree from making too many decisions on weak predictors;
