@@ -4,6 +4,12 @@ Academic project
 Description of the bikes prediction challenge
 This project was carried out during the "Python for Data Science" course of the X-HEC Data Science for Business Master of Science. 
 
+To run a submission and the notebook you will need the dependencies listed
+in 'requirements.txt'. You can install the dependencies with the
+following command-line:
+
+pip install -U -r requirements.txt
+
 The problem consisted in predicting the number of bikes circulating in Paris in several counters located near cycling lanes. Hence this problem was a regression problem. The original data can be found on the [opendata.paris](https://opendata.paris.fr/explore/dataset/comptage-velo-donnees-compteurs/information/?disjunctive.id_compteur&disjunctive.nom_compteur&disjunctive.id&disjunctive.name) website.
 
 The objective was to build two files : estimator.py containing a scikit-learn pipeline which final step was a predictive model, and external_data.csv, which contained additional data that we had to find ourselves through various sources. They were then sent on the [RAMP](https://ramp.studio/) Platform which we used for the project, which is maintained by the INRIA team.
@@ -44,3 +50,5 @@ N estimators and colsample by tree : they control the speed of convergence of th
 
 RAMP detailled informations
 More informations about RAMP can be obtained on the page of the bike_counting project template here.
+
+
